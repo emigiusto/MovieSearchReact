@@ -3,9 +3,6 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const port = process.env.port || 8082;
-
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -16,4 +13,4 @@ app.get('/', function(req, res) {
 });
 
 
-app.listen(port);
+app.listen(process.env.port || 8082);
